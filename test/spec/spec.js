@@ -1,46 +1,36 @@
-/*
-Steps:
-1. Open https://buildinglink.com/v2/global/login/login.aspx
-2. Enter username
-3. Enter password
-4. Click ‘Enter’ button
-5. Open ‘https://buildinglink.com/v2/mgmt/instructions/grid.aspx’
-6. Click on instruction with ID 11175568
-7. Click on ‘Edit’ button
-8. Clear Instruction Text
-9. Add random Instruction Text
-10. Click ‘Save and exit’ button - Check that changes are saved and Edit button is displayed
-11. Close browser
+//import * as mainpage from "../pages/main.page";
 
-*/
-const urlMain = 'https://buildinglink.com/v2/global/login/login.aspx';
-const urlInstruction = 'https://buildinglink.com/v2/mgmt/instructions/grid.aspx';
-const userName = 'sfront';
-const password = 'd99c6';
-const testText = 'A-TEST 88';
-const buttonText = 'Edit/Expire Instruction';
-const instructionXpath = '//div[@id="ctl00_MainContentPlaceHolder_currentInstructionsDataList_ctl00_instructionItemPanel"]';
-const timeOfWait = 30000;
+let Page = require('../pages/page.js');
+let page = new Page;
 
-describe ('Editing front desk instructions', function () {
+let MainPage = require('test/pages/main.page.js');
+let mainPage = new MainPage;
 
-    it('should save new instruction text', function () {
+let ForHome = require('test/pages/forHome.page.js');
+let forHome = new ForHome;
 
-        return browser.get(urlMain)
-            .then ( () => element(by.name('ctl00$Login1$UserName')).sendKeys(userName))
-            .then ( () => element(by.name('ctl00$Login1$Password')).sendKeys(password))
-            .then ( () => element(by.id('LoginButton')).click())
-            .then ( () => browser.get(urlInstruction))
-            .then ( () => browser.driver.switchTo().frame(browser.driver.findElement(By.xpath("//*[@id='main']"))))
-            .then ( () => element(by.xpath(instructionXpath)).click())
-            .then ( () => element(by.id('ctl00_MainContentPlaceHolder_EditButton')).click())
-            .then ( () => element(by.id('ctl00_MainContentPlaceHolder_instructionTextEditor_contentDiv')).clear())
-            .then ( () => element(by.id('ctl00_MainContentPlaceHolder_instructionTextEditor_contentDiv')).sendKeys(testText))
-            .then ( () => element(by.id('ctl00_MainContentPlaceHolder_SaveButton')).click())
-            .then ( () => browser.wait(protractor.ExpectedConditions.visibilityOf(element(By.id('ctl00_MainContentPlaceHolder_EditButton')))))
-            .then ( () => element(by.id('ctl00_MainContentPlaceHolder_EditButton')))
-            .then ( editButtonText => editButtonText.getText()
-                .then ( text => expect(text).toEqual(buttonText)))
+
+describe('Opening pages and display products', function () {
+
+    beforeEach(() => {
+        page.open();
+    });
+
+    it('1 - should open For Home page', function () {
+
+        return mainPage.openForHome()
+            .then ( () => browser.getTitle()
+                .then ( text => expect(text).toEqual('Global Leader in Flash Memory Storage Solutions | SanDisk')))
         }
     );
+
+    it('2 - should open Mobile Storage page', function () {
+
+            return mainPage.openForHome()
+                .then ( () => forHome.openMobileStorage())
+                .then ( () => browser.getTitle()
+                    .then ( text => expect(text).toEqual('Mobile Storage | SanDisk')))
+        }
+    );
+
 });

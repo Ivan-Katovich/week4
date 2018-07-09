@@ -1,20 +1,15 @@
-
 exports.config = {
-  //DirectConnect: true,
-    seleniumAddress: 'http://localhost:4444/wd/hub',
-  //onPrepare: function () {
-  //   browser.ignoreSynchronization = true;
-  //},
+  directConnect: true,
 
-    capabilities: {
+  capabilities: {
     'browserName': 'chrome'
   },
 
-    framework: 'jasmine',
+  framework: 'jasmine',
 
-    specs: ['test/spec/spec.js'],
+  specs: ['test/spec/spec.js'],
 
-    jasmineNodeOpts: {
-    defaultTimeoutInterval: 30000
+  jasmineNodeOpts: {
+  defaultTimeoutInterval: 30000
   }
 };
