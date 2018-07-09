@@ -3,10 +3,10 @@
 let Page = require('../pages/page.js');
 let page = new Page;
 
-let MainPage = require('test/pages/main.page.js');
+let MainPage = require('../pages/main.page.js');
 let mainPage = new MainPage;
 
-let ForHome = require('test/pages/forHome.page.js');
+let ForHome = require('../pages/forHome.page.js');
 let forHome = new ForHome;
 
 
