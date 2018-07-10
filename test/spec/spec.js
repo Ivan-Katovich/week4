@@ -13,12 +13,12 @@ let forHome = new ForHome;
 describe('Opening pages and display products', function () {
 
     beforeEach(() => {
-        page.open();
+        return page.open;
     });
 
     it('1 - should open For Home page', function () {
 
-        return mainPage.openForHome()
+        return mainPage.openForHome
             .then ( () => browser.getTitle()
                 .then ( text => expect(text).toEqual('Global Leader in Flash Memory Storage Solutions | SanDisk')))
         }
@@ -26,8 +26,8 @@ describe('Opening pages and display products', function () {
 
     it('2 - should open Mobile Storage page', function () {
 
-            return mainPage.openForHome()
-                .then ( () => forHome.openMobileStorage())
+            return mainPage.openForHome
+                .then ( () => forHome.openMobileStorage)
                 .then ( () => browser.getTitle()
                     .then ( text => expect(text).toEqual('Mobile Storage | SanDisk')))
         }

@@ -1,5 +1,10 @@
-module.exports={
-    mainMenu :{
+'use strict';
+
+function MainPage () {}
+
+MainPage.prototype = Object.create({}, {
+
+    mainMenu : {
         forHome: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[1]/a')),
         forBusiness: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[2]/a')),
         oemDesign: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[3]/a')),
@@ -37,4 +42,6 @@ module.exports={
         mainMenu.support.click();
     }
 
-};
+});
+
+module.exports = MainPage;

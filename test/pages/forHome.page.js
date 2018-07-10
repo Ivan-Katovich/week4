@@ -1,4 +1,8 @@
-module.exports={
+'use strict';
+
+function ForHome () {}
+
+ForHome.prototype = Object.create({}, {
     mainMenuForHome :{
         mobileStorage: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[1]/a')),
         cardsReaders: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[2]/a')),
@@ -52,4 +56,6 @@ module.exports={
         mainMenuForHome.shopNow.click();
     }
 
-};
+});
+
+module.exports = ForHome;
