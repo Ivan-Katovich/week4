@@ -1,36 +1,45 @@
-//import * as mainpage from "../pages/main.page";
 
-let Page = require('../pages/page.js');
-let page = new Page;
-
-let MainPage = require('../pages/main.page.js');
+let MainPage = require('../pages/mainPage.js');
 let mainPage = new MainPage;
 
-let ForHome = require('../pages/forHome.page.js');
+let ForHome = require('../pages/forHomePage.js');
 let forHome = new ForHome;
 
 
-describe('Opening pages and display products', function () {
+describe('Opening pages and displaying products', function () {
 
-    beforeEach(() => {
-        return page.open;
+    beforeEach ( () => {
+        return mainPage.goToPage();
     });
 
     it('1 - should open For Home page', function () {
-
-        return mainPage.openForHome
-            .then ( () => browser.getTitle()
-                .then ( text => expect(text).toEqual('Global Leader in Flash Memory Storage Solutions | SanDisk')))
+        return mainPage.data.forHome.click()
+            .then ( () => browser.getTitle())
+            .then ( text => expect(text).toEqual(mainPage.forHomeTitle))
         }
     );
 
-    it('2 - should open Mobile Storage page', function () {
-
-            return mainPage.openForHome
-                .then ( () => forHome.openMobileStorage)
-                .then ( () => browser.getTitle()
-                    .then ( text => expect(text).toEqual('Mobile Storage | SanDisk')))
+    it('2 - should open For Business page', function () {
+            return mainPage.data.forBusiness.click()
+                .then ( () => browser.getTitle())
+                .then ( text => expect(text).toEqual(mainPage.forBusinessTitle))
         }
     );
 
-});
+    it('3 - should open OEM Design page', function () {
+            return mainPage.data.oemDesign.click()
+                .then ( () => browser.getTitle())
+                .then ( text => expect(text).toEqual(mainPage.oemDesignTitle))
+        }
+    );
+
+    it('1.1 - should display Mobile Storage section on the For Home page', function () {
+            return mainPage.data.forHome.click()
+                .then ( () => forHome.data.mobileStorage.click())
+                .then ( () => browser.getCurrentUrl())
+                .then ( text => expect(text).toEqual(forHome.mobileStorageTitle))
+        }
+    );
+ });
+
+

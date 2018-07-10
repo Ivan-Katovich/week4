@@ -1,14 +1,9 @@
-'use strict';
 
-function Page () {}
-
-Page.prototype = Object.create({}, {
-
-    open: function () {
-        browser.get('https://www.sandisk.com/');
-        browser.waitForAngular();
-    }
-
-});
+class Page {
+    constructor() {}
+    getUrl() {return browser.getCurrentUrl()}
+    goToPage(){return browser.get(this.url)}
+    isElementVisible(name) {return this.data[name].isDisplayed()}
+}
 
 module.exports = Page;

@@ -2,15 +2,14 @@
   "name": "week4",
   "version": "1.0.0",
   "description": "JAVASCRIPT PATTERNS FOR TEST AUTOMATION",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "protractor": "node_modules\\.bin\\protractor protractor-conf.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dibraider/week4.git"
   },
-  "author": "",
+  "author": "SVM",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dibraider/week4/issues"
@@ -18,9 +17,7 @@
   "homepage": "https://github.com/Dibraider/week4#readme",
   "dependencies": {
     "jasmine": "^3.1.0",
-    "npm": "^6.0.1",
     "chai": "^4.1.2",
-    "protractor": "^5.3.2",
-    "selenium-webdriver": "^4.0.0-alpha.1"
+    "protractor": "^5.3.2"
   }
 }
