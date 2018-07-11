@@ -36,7 +36,7 @@ describe('Opening pages and displaying products', function () {
     it('1.1 - should display Mobile Storage section on the For Home page', function () {
             return mainPage.data.forHome.click()
                 .then ( () => forHome.data.mobileStorage.click())
-                .then ( () => browser.getCurrentUrl())
+                .then ( () => browser.getTitle())
                 .then ( text => expect(text).toEqual(forHome.mobileStorageTitle))
         }
     );
