@@ -1,7 +1,7 @@
 
 const Page = require (`./page`);
 
-class ForHome extends Page {
+class ForHomePage extends Page {
 
     constructor() {
 
@@ -24,4 +24,4 @@ class ForHome extends Page {
     }
 }
 
-module.exports = ForHome;
+module.exports = ForHomePage;
