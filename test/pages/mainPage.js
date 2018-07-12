@@ -10,11 +10,11 @@ class MainPage extends Page {
         this.url = 'https://www.sandisk.com/';
 
         this.data = {
-            forHome: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[1]/a')),
-            forBusiness: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[2]/a')),
-            oemDesign: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[3]/a')),
-            about: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[4]/a')),
-            support: element(by.xpath('//*[@id="bs-example-navbar-collapse-1"]/ul/li[5]/a'))
+            forHome: element(by.xpath('//*[@id="navbar"]//a[@href=\'/home.html\']')),
+            forBusiness: element(by.xpath('//*[@id="navbar"]//a[@href=\'/business.html\']')),
+            oemDesign: element(by.xpath('//*[@id="navbar"]//a[@href=\'/oem-design.html\']')),
+            about: element(by.xpath('//*[@id="navbar"]//a[@href=\'/about.html\']')),
+            support: element(by.xpath('//*[@id="navbar"]//a[@href=\'/support.html\']'))
         };
 
         this.menuElements = element.all(by.css('.nav-wrapper li'));
@@ -24,11 +24,11 @@ class MainPage extends Page {
         this.oemDesignTitle = 'Sandisk - OEM Design Solutions';
     }
 
-    clickMenuElement(item) {
+    clickMainMenuElement(item) {
          const rootEl = this.menuElements.filter((el) => {
             return el.getText()
                 .then((text) => {
-                    return text === item;
+                    return text.toLowerCase().trim() === item.toLowerCase();
                 });
         }).first();
         return rootEl.click();
