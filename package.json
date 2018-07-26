@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "JAVASCRIPT PATTERNS FOR TEST AUTOMATION",
   "scripts": {
-    "protractor": "node_modules\\.bin\\protractor protractor-conf.js"
+    "protractor": "node_modules\\.bin\\protractor protractor-conf.js",
+    "cuc": "cu-conf.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
     "jasmine": "^3.1.0",
     "chai": "^4.1.2",
     "protractor": "^5.3.2"
+  },
+  "devDependencies": {
+    "cucumber": "^4.2.1"
   }
 }
