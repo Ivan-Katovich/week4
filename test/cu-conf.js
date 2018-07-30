@@ -1,24 +1,27 @@
 exports.config = {
 
-    default: `--format-options '{"snippetInterface": "synchronous"}'`,
+
+    directConnect: true,
+
+    //default: `--format-options '{"snippetInterface": "synchronous"}'`,
 
     //seleniumAddress: 'http://localhost:4444/wd/hub',
 
     capabilities: {browserName: 'chrome'},
 
-    baseUrl: 'http://178.124.206.54/',
-
     ignoreUncaughtExceptions: true,
 
-    framework: 'cucumber',
+    framework: 'custom',
 
     specs: [
-        'features/*.feature'
+        '../test/features/*.feature'
     ],
+
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
 
     cucumberOpts: {
         require: [
-            'step_definitions/*.js'
+            '../test/step_definitions/*.js'
         ]
     },
 

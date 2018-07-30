@@ -1,27 +1,16 @@
 {
   "name": "week4",
   "version": "1.0.0",
-  "description": "JAVASCRIPT PATTERNS FOR TEST AUTOMATION",
   "scripts": {
-    "protractor": "node_modules\\.bin\\protractor protractor-conf.js",
-    "cuc": "cu-conf.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Dibraider/week4.git"
+    "protractor": "node_modules\\.bin\\protractor protractor-conf.js"
   },
   "author": "SVM",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Dibraider/week4/issues"
-  },
-  "homepage": "https://github.com/Dibraider/week4#readme",
   "dependencies": {
-    "jasmine": "^3.1.0",
     "chai": "^4.1.2",
-    "protractor": "^5.3.2"
-  },
-  "devDependencies": {
-    "cucumber": "^4.2.1"
+    "cucumber": "^4.2.1",
+    "jasmine": "^3.1.0",
+    "npm": "^6.2.0",
+    "protractor": "^5.3.2",
+    "protractor-cucumber-framework": "^4.0.9"
   }
 }
