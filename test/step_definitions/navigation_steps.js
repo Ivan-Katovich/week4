@@ -1,4 +1,5 @@
 let cucumber = require('cucumber');
+let expect = require('chai').expect;
 
 let MainPage = require('../pages/mainPage.js');
 let mainPage = new MainPage;
@@ -22,16 +23,17 @@ cucumber.defineSupportCode(function({ Given, When, Then, setDefaultTimeout }) {
         return forHomePage.clickForHomeMenuElement(pageName);
     });
 
-    Then('I should see {string} page', function (pageName) {
-        let title = browser.getTitle();
+    Then('I should see {string} page', async function (pageName) {
+        let title = await browser.getTitle();
+        console.log(title);
         switch (pageName){
-            case 'For Home': expect(title).toEqual(mainPage.forHomeTitle);
+            case 'For Home': expect(title).to.equal(mainPage.forHomeTitle);
                                 break;
-            case 'For Business': expect(title).toEqual(mainPage.forBusinessTitle);
+            case 'For Business': expect(title).to.equal(mainPage.forBusinessTitle);
                                 break;
-            case 'OEM Design': expect(title).toEqual(mainPage.oemDesignTitle);
+            case 'OEM Design': expect(title).to.equal(mainPage.oemDesignTitle);
                                 break;
-            case 'Mobile Storage': expect(title).toEqual(forHomePage.mobileStorageTitle);
+            case 'Mobile Storage': expect(title).to.equal(forHomePage.mobileStorageTitle);
                 break;
         }
     });
