@@ -23,5 +23,5 @@ Feature: Opening pages and displaying products
   Scenario: Open 'Mobile Storage' section from the 'For Home' page
     Given I am on the homepage
     When I click on the 'For Home' button
-    And I click on the 'Mobile Storage' button
-    Then I should see 'Mobile Storage' section
+    And I click on the 'Mobile Storage' section
+    Then I should see 'Mobile Storage' page
