@@ -1,10 +1,10 @@
 let cucumber = require('cucumber');
 let expect = require('chai').expect;
 
-let MainPage = require('../pages/mainPage.js');
+let MainPage = require('../../support/pages/mainPage.js');
 let mainPage = new MainPage;
 
-let ForHomePage = require('../pages/forHomePage.js');
+let ForHomePage = require('../../support/pages/forHomePage.js');
 let forHomePage = new ForHomePage;
 
 cucumber.defineSupportCode(function({ Given, When, Then, setDefaultTimeout }) {

@@ -1,5 +1,5 @@
 
-const Page = require (`./page`);
+const Page = require (`./test/support/pages/page`);
 
 class MainPage extends Page {
 

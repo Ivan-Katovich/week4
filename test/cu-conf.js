@@ -21,7 +21,7 @@ exports.config = {
 
     cucumberOpts: {
         require: [
-            '../test/step_definitions/*.js'
+            '../test/features/step_definitions/*.js'
         ]
     },
 
