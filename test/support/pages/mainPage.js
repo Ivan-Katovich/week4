@@ -16,6 +16,7 @@ class MainPage extends Page {
             about: element(by.xpath('//*[@id="navbar"]//a[@href=\'/about.html\']')),
             support: element(by.xpath('//*[@id="navbar"]//a[@href=\'/support.html\']')),
             menuElements: element.all(by.css('.nav-wrapper li'))
+
         };
 
         this.forHomeTitle = 'Global Leader in Flash Memory Storage Solutions | SanDisk';
