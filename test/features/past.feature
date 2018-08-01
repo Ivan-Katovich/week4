@@ -12,7 +12,6 @@ Feature: Opening pages and displaying products
     Given I am on the homepage
     When I click on the 'For Business' button
     Then I should see 'For Business' page
-
   @first-3
   Scenario: Open 'OEM Design' page
     Given I am on the homepage

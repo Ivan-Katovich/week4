@@ -1,15 +1,13 @@
-let cucumber = require('cucumber');
+let { Given, When, Then, setDefaultTimeout } = require('cucumber');
 let expect = require('chai').expect;
 
-let MainPage = require('../../support/pages/mainPage.js');
+let MainPage = require('../../pages/mainPage.js');
 let mainPage = new MainPage;
 
-let ForHomePage = require('../../support/pages/forHomePage.js');
+let ForHomePage = require('../../pages/forHomePage.js');
 let forHomePage = new ForHomePage;
 
-cucumber.defineSupportCode(function({ Given, When, Then, setDefaultTimeout }) {
-
-    setDefaultTimeout(180000);
+    setDefaultTimeout(18000);
 
     Given(/^I am on the homepage$/, function() {
         return mainPage.goToPage();
@@ -37,4 +35,3 @@ cucumber.defineSupportCode(function({ Given, When, Then, setDefaultTimeout }) {
                 break;
         }
     });
-});

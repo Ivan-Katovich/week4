@@ -1,5 +1,5 @@
 
-const Page = require (`./test/support/pages/page`);
+const Page = require (`./page.js`);
 
 class ForHomePage extends Page {
 

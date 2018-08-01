@@ -1,5 +1,5 @@
 
-const Page = require (`./test/support/pages/page`);
+const Page = require (`./page.js`);
 
 class MainPage extends Page {
 
@@ -15,8 +15,8 @@ class MainPage extends Page {
             oemDesign: element(by.xpath('//*[@id="navbar"]//a[@href=\'/oem-design.html\']')),
             about: element(by.xpath('//*[@id="navbar"]//a[@href=\'/about.html\']')),
             support: element(by.xpath('//*[@id="navbar"]//a[@href=\'/support.html\']')),
-            menuElements: element.all(by.css('.nav-wrapper li'))
-
+            menuElements: element.all(by.css('.nav-wrapper li')),
+            shopIcon: element(by.css('.icon-retail'))
         };
 
         this.forHomeTitle = 'Global Leader in Flash Memory Storage Solutions | SanDisk';

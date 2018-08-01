@@ -1,13 +1,28 @@
 @second
-Feature: login - We want to test the login process
+Feature: Testing of the login process
+
+  @second-1
+  Scenario: login with valid credentials
+  Verify that the user can enter the site using correct credentials
+    Given I am on the homepage
+    And I click on the Shop icon
+    And I click on the Login icon
+    When I fill in "Email" with "svm-tut@tut.by"
+    And I fill in "Password" with "Sergey147741+"
+    And I press "Login"
+    Then I should be on the users home page
+
+  @second-2
+  Scenario: login with invalid credentials
+  Verify that the user can enter the site using correct credentials
+    Given I am on the homepage
+    And I click on the Shop icon
+    And I click on the Login icon
+    When I fill in "Email" with "test@test.test"
+    And I fill in "Password" with "123456789"
+    And I press "Login"
+    Then I should see "Enter a valid email address." error
 
 
-  Scenario: SC01.Check the user can login into the application
-  Verify that the user can enter in the application using correct credentials and the cookies are created successfully.
-    Given the user is in the Login page
-    And the user set the username '<userId>'
-    And the user set the password '<password>'
-    When the user logs in the application
-    Then the user is redirected to the Welcome page
 
 
