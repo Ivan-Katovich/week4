@@ -1,5 +1,4 @@
 let { Given, setDefaultTimeout } = require('cucumber');
-let expect = require('chai').expect;
 
 let MainPage = require('../../pages/mainPage.js');
 let mainPage = new MainPage;

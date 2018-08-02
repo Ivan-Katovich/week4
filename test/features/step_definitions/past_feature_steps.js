@@ -13,15 +13,15 @@ let forHomePage = new ForHomePage;
         return mainPage.goToPage();
     });
 
-    When('I click on the {string} button', function (pageName) {
+    When(/^I click on the "([^"]*)" button$/, function (pageName) {
         return mainPage.clickMainMenuElement(pageName);
     });
 
-    When('I click on the {string} section', function (pageName) {
+    When(/^I click on the "([^"]*)" section$/, function (pageName) {
         return forHomePage.clickForHomeMenuElement(pageName);
     });
 
-    Then('I should see {string} page', async function (pageName) {
+    Then(/^I should see "([^"]*)" page$/, async function (pageName) {
         let title = await browser.getTitle();
         console.log(title);
         switch (pageName){
