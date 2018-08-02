@@ -14,7 +14,7 @@ Feature: Testing of the login process
 
   @second-2
   Scenario: login with invalid credentials
-  Verify that the user can enter the site using correct credentials
+  Verify that the user cannot enter the site using invalid credentials
     Given I am on the homepage
     And I click on the Shop icon
     And I click on the Login icon
